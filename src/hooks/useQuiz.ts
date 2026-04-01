@@ -23,5 +23,6 @@ export function useQuiz(weekId: string) {
     completion,
     isQuizDone: !!completion,
     hasPassedQuiz: completion?.passed ?? false,
+    completeQuiz,
   }
 }
