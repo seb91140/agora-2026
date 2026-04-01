@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer utilities {
+  .bg-rouge-marianne { background-color: #ED2939; }
+  .text-rouge-marianne { color: #ED2939; }
+  .border-rouge-marianne { border-color: #ED2939; }
+  .hover\:bg-rouge-marianne-hover:hover { background-color: #c41f2e; }
+  .bg-bleu-republic { background-color: #002395; }
+  .text-bleu-republic { color: #002395; }
+  .border-bleu-republic { border-color: #002395; }
+  .bg-bleu-republic-600 { background-color: #001a6e; }
+  .hover\:bg-bleu-republic-600:hover { background-color: #001a6e; }
+  .ring-bleu-republic { --tw-ring-color: #002395; }
+  .focus\:ring-bleu-republic:focus { --tw-ring-color: #002395; }
+  .bg-or-civic { background-color: #F5A623; }
+  .text-or-civic { color: #F5A623; }
+  .bg-or-civic-light { background-color: #fef3c7; }
+}
