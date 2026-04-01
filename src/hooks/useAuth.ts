@@ -72,6 +72,22 @@ export function useAuth() {
     return null
   }, [])
 
+  const loginWithCode = useCallback((pseudonym: string) => {
+    const newUser: User = {
+      id: generateUserId(),
+      pseudonym,
+      email: `${pseudonym.toLowerCase()}@poc.agora`,
+      passwordHash: '',
+      score: 0,
+      badges: [],
+      createdAt: new Date().toISOString(),
+      votedWeeks: [],
+      quizPassedWeeks: [],
+      fairPlayWeeks: [],
+    }
+    persistUser(newUser)
+  }, [])
+
   const logout = useCallback(() => {
     setUser(null)
   }, [])
@@ -88,5 +104,5 @@ export function useAuth() {
     persistUser(updated)
   }, [user])
 
-  return { user, loading, register, login, logout, updateUser, addPoints, isAuthenticated: !!user }
+  return { user, loading, register, login, loginWithCode, logout, updateUser, addPoints, isAuthenticated: !!user }
 }
